@@ -10,12 +10,12 @@ RUN apt-get update \
     && set -x \
     && apt-get install -qq --no-install-recommends -y build-essential ca-certificates cmake cuda-core-9-0 git cuda-cudart-dev-9-0 libhwloc-dev libmicrohttpd-dev libssl-dev \
     && git clone $GIT_REPOSITORY \
-    && cd /xmr-stak \
+    && cd /xmr-stak-alpine \
     && cmake ${XMRSTAK_CMAKE_FLAGS} . \
     && make \
     && cd - \
     && mv /xmr-stak/bin/* /usr/local/bin/ \
-    && rm -rf /xmr-stak \
+    && rm -rf /xmr-stak-alpine \
     && apt-get purge -y -qq build-essential cmake cuda-core-9-0 git cuda-cudart-dev-9-0 libhwloc-dev libmicrohttpd-dev libssl-dev \
     && apt-get clean -qq
 
