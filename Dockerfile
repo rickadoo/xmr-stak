@@ -2,10 +2,10 @@
 FROM nvidia/cuda:9.0-base
 
 # Default git repository
-ENV GIT_REPOSITORY https://github.com/fireice-uk/xmr-stak.git
+ENV GIT_REPOSITORY https://github.com/rickadoo/xmr-stak-alpine.git
 ENV XMRSTAK_CMAKE_FLAGS -DXMR-STAK_COMPILE=generic -DCUDA_ENABLE=ON -DOpenCL_ENABLE=OFF
 
-# Innstall packages
+# Install packages
 RUN apt-get update \
     && set -x \
     && apt-get install -qq --no-install-recommends -y build-essential ca-certificates cmake cuda-core-9-0 git cuda-cudart-dev-9-0 libhwloc-dev libmicrohttpd-dev libssl-dev \
