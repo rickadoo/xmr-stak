@@ -18,6 +18,10 @@ cd xmr-stak/build <br>
 cmake .. -DCUDA_ENABLE=OFF -DOpenCL_ENABLE=OFF <br>
 make install <br>
 
+## Support for Large Pages
+
+sysctl -w vm.nr_hugepages=128
+
 ## Usage 
 
 xmr-stak -o <miningpoolurl:port> -u <wallet address> -p <password> --currency <cointomine> <br>
